@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[ENVIRONMENT$0]]></content>
+    <tabTrigger>ENVIRONMENT</tabTrigger>
+    <scope>source.php</scope>
+    <description>Const: system environment</description>
+</snippet>

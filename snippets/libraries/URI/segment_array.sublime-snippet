@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[this->uri->segment_array()$0]]></content>
+    <tabTrigger>this->uri->segment_array()</tabTrigger>
+    <scope>source.php</scope>
+    <description>Segment Array</description>
+</snippet>

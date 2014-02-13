@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[this->logger->log(${1:\$desc}, ${2:\$data}, ${3:\$severity = 1})$0]]></content>
+    <tabTrigger>this->logger->log()</tabTrigger>
+    <scope>source.php</scope>
+    <description>Log</description>
+</snippet>

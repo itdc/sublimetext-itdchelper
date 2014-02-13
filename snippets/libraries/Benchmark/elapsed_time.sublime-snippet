@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[this->benchmark->elapsed_time(${1:\$point1 = ''}, ${2:\$point2 = ''}, ${3:\$decimals = 4})$0]]></content>
+    <tabTrigger>this->benchmark->elapsed_time()</tabTrigger>
+    <scope>source.php</scope>
+    <description>Calculates the time difference between two marked points</description>
+</snippet>

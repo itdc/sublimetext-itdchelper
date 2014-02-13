@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[this->db->like(${1:\$field}, ${2:\$match}, ${3:\$side = 'both'})$0]]></content>
+    <tabTrigger>this->db->like()</tabTrigger>
+    <scope>source.php</scope>
+    <description>Generates a LIKE portion of the query (AND)</description>
+</snippet>

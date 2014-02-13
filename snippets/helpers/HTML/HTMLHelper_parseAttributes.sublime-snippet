@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[HTMLHelper::parseAttributes(${1:\$string})$0]]></content>
+    <tabTrigger>HTMLHelper::parseAttributes()</tabTrigger>
+    <scope>source.php</scope>
+    <description>Parse html attributes</description>
+</snippet>

@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[this->model->cats->getTotal()$0]]></content>
+    <tabTrigger>this->model->cats->getTotal()</tabTrigger>
+    <scope>source.php</scope>
+    <description>Get total count of data</description>
+</snippet>

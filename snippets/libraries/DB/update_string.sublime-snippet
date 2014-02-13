@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[this->db->update_string(${1:\$table}, ${2:\$data}, ${3:\$where})$0]]></content>
+    <tabTrigger>this->db->update_string()</tabTrigger>
+    <scope>source.php</scope>
+    <description>Generate an update string</description>
+</snippet>

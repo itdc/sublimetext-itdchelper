@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[log_message(${1:\$level = 'error'}, ${2:\$message}, ${3:\$php_error = false})$0]]></content>
+    <tabTrigger>log_message()</tabTrigger>
+    <scope>source.php</scope>
+    <description>Error Logging Interface</description>
+</snippet>

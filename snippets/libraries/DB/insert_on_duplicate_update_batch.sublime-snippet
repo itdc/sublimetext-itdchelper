@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[this->db->insert_on_duplicate_update_batch(${1:\$table = ''}, ${2:\$set = null})$0]]></content>
+    <tabTrigger>this->db->insert_on_duplicate_update_batch()</tabTrigger>
+    <scope>source.php</scope>
+    <description>Compiles batch insert strings and runs the onduplicate queries</description>
+</snippet>

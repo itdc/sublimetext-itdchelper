@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[HTMLHelper::parseBBTags(${1:\$text}, ${2:\$tags = array()})$0]]></content>
+    <tabTrigger>HTMLHelper::parseBBTags()</tabTrigger>
+    <scope>source.php</scope>
+    <description>Parse BB tags</description>
+</snippet>

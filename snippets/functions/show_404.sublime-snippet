@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[show_404(${1:\$page = ''}, ${2:\$log_error = true})$0]]></content>
+    <tabTrigger>show_404()</tabTrigger>
+    <scope>source.php</scope>
+    <description>404 Page Handler</description>
+</snippet>

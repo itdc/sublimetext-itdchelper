@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[this->db->trans_status()$0]]></content>
+    <tabTrigger>this->db->trans_status()</tabTrigger>
+    <scope>source.php</scope>
+    <description>Lets you retrieve the transaction flag to determine if it has failed</description>
+</snippet>

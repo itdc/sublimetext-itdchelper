@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[this->form_validation->set_rules(${1:\$field = null}, ${2:\$label = ''}, ${3:\$rules = ''})$0]]></content>
+    <tabTrigger>this->form_validation->set_rules()</tabTrigger>
+    <scope>source.php</scope>
+    <description>Set validation rules</description>
+</snippet>

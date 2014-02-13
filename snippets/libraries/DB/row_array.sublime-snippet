@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[this->db->row_array(${1:\$n = 0})$0]]></content>
+    <tabTrigger>this->db->row_array()</tabTrigger>
+    <scope>source.php</scope>
+    <description>Returns a single result row - array version</description>
+</snippet>

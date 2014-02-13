@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[this->mailer->setAttachmentExtensions(${1:\$pass})$0]]></content>
+    <tabTrigger>this->mailer->setAttachmentExtensions()</tabTrigger>
+    <scope>source.php</scope>
+    <description>Add allowed attachment extensions</description>
+</snippet>

@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[this->db->table_exists(${1:\$table_name})$0]]></content>
+    <tabTrigger>this->db->table_exists()</tabTrigger>
+    <scope>source.php</scope>
+    <description>Determine if a particular table exists</description>
+</snippet>

@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[this->db->trans_off()$0]]></content>
+    <tabTrigger>this->db->trans_off()</tabTrigger>
+    <scope>source.php</scope>
+    <description>This permits transactions to be disabled at run-time</description>
+</snippet>

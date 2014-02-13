@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[this->pagination->create_links()$0]]></content>
+    <tabTrigger>this->pagination->create_links()</tabTrigger>
+    <scope>source.php</scope>
+    <description>Generate the pagination links</description>
+</snippet>

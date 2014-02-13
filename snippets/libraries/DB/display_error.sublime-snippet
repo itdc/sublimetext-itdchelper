@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[this->db->display_error(${1:\$error = ''}, ${2:\$swap = ''}, ${3:\$native = false})$0]]></content>
+    <tabTrigger>this->db->display_error()</tabTrigger>
+    <scope>source.php</scope>
+    <description>Display an error message</description>
+</snippet>

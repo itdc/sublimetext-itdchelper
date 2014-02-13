@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[ArrayHelper::convertEntities(${1:$entities_array})]]></content>
+    <tabTrigger>ArrayHelper::convertEntities()</tabTrigger>
+    <scope>source.php</scope>
+    <description>Convert entities object array to data array</description>
+</snippet>

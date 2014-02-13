@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[this->output->set_status_header(${1:\$code = 200}, ${2:\$text = ''})$0]]></content>
+    <tabTrigger>this->output->set_status_header()</tabTrigger>
+    <scope>source.php</scope>
+    <description>Set HTTP Status Header</description>
+</snippet>

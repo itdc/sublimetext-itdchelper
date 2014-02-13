@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[this->db->num_rows()$0]]></content>
+    <tabTrigger>this->db->num_rows()</tabTrigger>
+    <scope>source.php</scope>
+    <description>Number of rows in the result set</description>
+</snippet>

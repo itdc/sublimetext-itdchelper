@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[this->menu->createMultiDimArr(${1:\$arr}, ${2:\$parent_id = false})$0]]></content>
+    <tabTrigger>this->menu->createMultiDimArr()</tabTrigger>
+    <scope>source.php</scope>
+    <description>Transforms menu array from database</description>
+</snippet>

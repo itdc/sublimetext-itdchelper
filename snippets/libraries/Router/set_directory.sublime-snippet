@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[this->router->set_directory(${1:\$dir})$0]]></content>
+    <tabTrigger>this->router->set_directory()</tabTrigger>
+    <scope>source.php</scope>
+    <description>Set the directory name</description>
+</snippet>

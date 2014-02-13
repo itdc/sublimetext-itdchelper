@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[this->db->insert_string(${1:\$table}, ${2:\$data})$0]]></content>
+    <tabTrigger>this->db->insert_string()</tabTrigger>
+    <scope>source.php</scope>
+    <description>Generate an insert string</description>
+</snippet>

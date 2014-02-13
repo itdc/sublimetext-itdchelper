@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[this->user->get(${1:\$name}, ${2:\$default = null})$0]]></content>
+    <tabTrigger>this->user->get()</tabTrigger>
+    <scope>source.php</scope>
+    <description>Get user field</description>
+</snippet>

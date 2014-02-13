@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[this->db->update(${1:\$table = ''}, ${2:\$set = null}, ${3:\$where = null}, ${4:\$limit = null})$0]]></content>
+    <tabTrigger>this->db->update()</tabTrigger>
+    <scope>source.php</scope>
+    <description>Compiles an update string and runs the query</description>
+</snippet>

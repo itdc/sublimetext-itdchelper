@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[cont_entity->getLink()$0]]></content>
+    <tabTrigger>cont_entity->getLink()</tabTrigger>
+    <scope>source.php</scope>
+    <description>Content getLink method</description>
+</snippet>

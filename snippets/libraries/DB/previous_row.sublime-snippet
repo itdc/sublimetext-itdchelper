@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[this->db->previous_row(${1:\$type = 'object'})$0]]></content>
+    <tabTrigger>this->db->previous_row()</tabTrigger>
+    <scope>source.php</scope>
+    <description>Returns the "previous" row</description>
+</snippet>

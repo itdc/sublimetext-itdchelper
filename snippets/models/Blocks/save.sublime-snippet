@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[this->model->blocks->save(${1:\$data}, ${2:\$cat_id})$0]]></content>
+    <tabTrigger>this->model->blocks->save()</tabTrigger>
+    <scope>source.php</scope>
+    <description>BlocksModel save method</description>
+</snippet>

@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[this->model->blocks->getEntityName(${1:\$name = null})$0]]></content>
+    <tabTrigger>this->model->blocks->getEntityName()</tabTrigger>
+    <scope>source.php</scope>
+    <description>Get entity name</description>
+</snippet>

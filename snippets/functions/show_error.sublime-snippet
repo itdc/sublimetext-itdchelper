@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[show_error(${1:\$message}, ${2:\$status_code = 500}, ${3:\$heading = 'An Error Was Encountered'})$0]]></content>
+    <tabTrigger>show_error()</tabTrigger>
+    <scope>source.php</scope>
+    <description>This function lets us invoke the exception class and display errors</description>
+</snippet>

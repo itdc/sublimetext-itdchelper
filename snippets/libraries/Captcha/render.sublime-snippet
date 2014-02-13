@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[this->captcha->render()$0]]></content>
+    <tabTrigger>this->captcha->render()</tabTrigger>
+    <scope>source.php</scope>
+    <description>Render captcha</description>
+</snippet>

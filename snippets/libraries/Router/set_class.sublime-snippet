@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[this->router->set_class(${1:\$class})$0]]></content>
+    <tabTrigger>this->router->set_class()</tabTrigger>
+    <scope>source.php</scope>
+    <description>Set the class name</description>
+</snippet>

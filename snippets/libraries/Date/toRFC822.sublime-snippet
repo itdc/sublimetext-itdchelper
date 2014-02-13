@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[this->date->toRFC822()$0]]></content>
+    <tabTrigger>this->date->toRFC822()</tabTrigger>
+    <scope>source.php</scope>
+    <description>Format date to toRFC822</description>
+</snippet>

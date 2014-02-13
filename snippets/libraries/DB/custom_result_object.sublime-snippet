@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[this->db->custom_result_object(${1:\$class_name})$0]]></content>
+    <tabTrigger>this->db->custom_result_object()</tabTrigger>
+    <scope>source.php</scope>
+    <description>Custom query result</description>
+</snippet>

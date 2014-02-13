@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[this->model->blocks->clearTableFieldsCache()$0]]></content>
+    <tabTrigger>this->model->blocks->clearTableFieldsCache()</tabTrigger>
+    <scope>source.php</scope>
+    <description>Clear table fields cache</description>
+</snippet>

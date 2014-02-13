@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[this->model->blocks->getCatBlocks(${1:\$cat_id}, ${2:\$place_id = false})$0]]></content>
+    <tabTrigger>this->model->blocks->getCatBlocks()</tabTrigger>
+    <scope>source.php</scope>
+    <description>BlocksModel getCatBlocks method</description>
+</snippet>
