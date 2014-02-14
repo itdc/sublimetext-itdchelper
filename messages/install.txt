@@ -1,0 +1,8 @@
+sublimetext-itdc
+======================
+
+Sublime Text 2/3 ITDC plugin
+
+Features:
+- CMS autocomplete
+

@@ -1,6 +1,0 @@
-<snippet>
-    <content><![CDATA[redirect(${1:\$uri = ''}, ${2:\$method = 'location'}, ${3:\$http_response_code = 302})$0]]></content>
-    <tabTrigger>redirect()</tabTrigger>
-    <scope>source.php</scope>
-    <description>Header redirect in two flavors</description>
-</snippet>

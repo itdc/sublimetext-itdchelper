@@ -1,6 +1,0 @@
-<snippet>
-    <content><![CDATA[form_checkbox(${1:\$data = ''}, ${2:\$value = ''}, ${3:\$checked = false}, ${4:\$extra = ''})$0]]></content>
-    <tabTrigger>form_checkbox()</tabTrigger>
-    <scope>source.php</scope>
-    <description>Checkbox Field</description>
-</snippet>
