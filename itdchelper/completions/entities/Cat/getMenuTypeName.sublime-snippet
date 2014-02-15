@@ -1,6 +1,6 @@
 <snippet>
-    <content><![CDATA[cat_entity->getMenuTypeName()$0]]></content>
-    <tabTrigger>cat_entity->getMenuTypeName()</tabTrigger>
+    <content><![CDATA[cat->getMenuTypeName()$0]]></content>
+    <tabTrigger>cat->getMenuTypeName()</tabTrigger>
     <scope>source.php</scope>
     <description>Category getMenuTypeName method</description>
 </snippet>

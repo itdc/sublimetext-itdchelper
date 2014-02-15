@@ -2,5 +2,5 @@
     <content><![CDATA[this->mailer->setDebug(${1:\$status})$0]]></content>
     <tabTrigger>this->mailer->setDebug()</tabTrigger>
     <scope>source.php</scope>
-    <description>Add debug mode</description>
+    <description>Set smtp debug mode</description>
 </snippet>

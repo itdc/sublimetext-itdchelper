@@ -1,4 +1,4 @@
-sublimetext-itdc
+sublimetext-itdchelper
 ======================
 
 Sublime Text 2/3 ITDC plugin

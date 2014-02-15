@@ -2,5 +2,5 @@
     <content><![CDATA[HTMLHelper::showBlock(${1:\$place_id})$0]]></content>
     <tabTrigger>HTMLHelper::showBlock()</tabTrigger>
     <scope>source.php</scope>
-    <description>Show block</description>
+    <description>Show block with given place id</description>
 </snippet>

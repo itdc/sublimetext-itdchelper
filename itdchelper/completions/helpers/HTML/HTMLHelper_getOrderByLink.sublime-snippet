@@ -1,5 +1,5 @@
 <snippet>
-    <content><![CDATA[HTMLHelper::getOrderByLink(${1:\$segment}, ${2:\$field}, ${3:\$text = ''})$0]]></content>
+    <content><![CDATA[HTMLHelper::getOrderByLink(${1:\$segment}, ${2:\$field})$0]]></content>
     <tabTrigger>HTMLHelper::getOrderByLink()</tabTrigger>
     <scope>source.php</scope>
     <description>Get order by links</description>

@@ -1,6 +1,6 @@
 <snippet>
-    <content><![CDATA[media_entity->getPath()$0]]></content>
-    <tabTrigger>media_entity->getPath()</tabTrigger>
+    <content><![CDATA[media->getPath()$0]]></content>
+    <tabTrigger>media->getPath()</tabTrigger>
     <scope>source.php</scope>
     <description>Media getPath method</description>
 </snippet>

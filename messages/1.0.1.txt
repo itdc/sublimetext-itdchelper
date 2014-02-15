@@ -1,0 +1,6 @@
+Sublime ITDCHelper 1.0.1 Changelog:
+
+
+Bug Fixes
+------------
+- improved auto completions

@@ -1,5 +1,5 @@
 <snippet>
-    <content><![CDATA[this->message->addError(${1:\$text}, ${2:\$translate = true})$0]]></content>
+    <content><![CDATA[this->message->addError(${1:\$text})$0]]></content>
     <tabTrigger>this->message->addError()</tabTrigger>
     <scope>source.php</scope>
     <description>Add error message</description>

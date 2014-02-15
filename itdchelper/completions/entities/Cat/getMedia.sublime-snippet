@@ -1,6 +1,6 @@
 <snippet>
-    <content><![CDATA[cat_entity->getMedia(${1:\$type = null}, ${2:\$limit = null})$0]]></content>
-    <tabTrigger>cat_entity->getMedia()</tabTrigger>
+    <content><![CDATA[cat->getMedia()$0]]></content>
+    <tabTrigger>cat->getMedia()</tabTrigger>
     <scope>source.php</scope>
     <description>Category getMedia method</description>
 </snippet>
