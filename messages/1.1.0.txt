@@ -1,0 +1,6 @@
+Sublime ITDCHelper 1.1.0 Changelog:
+
+
+Features
+------------
+- Added some missing functions
