@@ -1,0 +1,10 @@
+[
+	{
+		"caption": "ITDCHelper: Create CMS Project",
+		"command": "itdchelper_create_cms_project"
+	},
+	{
+		"caption": "ITDCHelper: Test",
+		"command": "itdchelper_create_project"
+	}
+]
