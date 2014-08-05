@@ -15,6 +15,9 @@ import pymysql
 import urllib.request
 import json
 import threading
+from random import sample
+import time
+
 
 class ItdchelperCreateCmsProjectCommand(sublime_plugin.TextCommand):
 	db_host = '192.168.1.33'
@@ -92,12 +95,14 @@ def show_error(text):
 
 
 class ItdchelperCreateCmsProjectProcess(threading.Thread):
-	service_url = 'http://tools.local.itdc.ge/project/process.php'
+	service_url = 'http://tools.site.itdc.ge/project/process.php'
 	domain = ''
 	view = None
 	window = None
+	start_time = None
 
 	def __init__(self, text, pview):
+		self.start_time = time.time()
 		self.domain = text
 		self.view = pview
 		self.window = self.view.window()
@@ -110,24 +115,42 @@ class ItdchelperCreateCmsProjectProcess(threading.Thread):
 
 
 		key = self.getKey()
-		self.panel.append('Loading...')
 
+		self.panel.append('Creating project "'+self.domain+'"')
+		self.panel.append('Loading')
+
+		thread2 = ItdchelperCreateCmsProjectLoading(self.panel)
+		thread2.start()
 
 
 		service_url = self.service_url + '?mode=create&name='+self.domain+'&key='+key
 
+		#self.panel.append('DEBUG: request to '+service_url)
+
 		try:
-			response = urllib.request.urlopen(service_url, timeout=3600).read().decode('utf-8')
+			response = urllib.request.urlopen(service_url).read().decode('utf-8')
 			json_data = json.loads(response)
 		except Exception as e:
+			thread2.stop()
+
 			stderr = str(e)
-			txt = 'Create ITDC CMS Project:'+"\n\nError: "+stderr
+			elapsed = "\n\n= = = = = = = = = = = = = = =\nExecution time: %.3f sec" % round((time.time() - self.start_time), 3)
+			txt = stderr + elapsed
 			self.panel.replace(txt)
 			return False
 
 
+		# insert in service.itdc.ge
+
+
+
+		thread2.stop()
+
+		elapsed = "\n\n= = = = = = = = = = = = = = =\nExecution time: %.3f sec" % round((time.time() - self.start_time), 3)
 		status = json_data['status']
-		msg = json_data['msg']
+		msg = json_data['msg'] + elapsed
+
+
 		self.panel.replace(msg)
 
 	def getKey(self):
@@ -137,33 +160,81 @@ class ItdchelperCreateCmsProjectProcess(threading.Thread):
 
 
 
+
+class ItdchelperCreateCmsProjectLoading(threading.Thread):
+	panel = None
+	running = False
+
+	def __init__(self, ppanel):
+		self.panel = ppanel
+		self.running = True
+		threading.Thread.__init__(self)
+
+	def run(self):
+
+		for i in range(1000000):
+			time.sleep(0.3)
+			if not self.running:
+				break
+			self.panel.append(".", False)
+
+	def stop(self):
+		self.running = False
+
+
 class ItdchelperCreateCmsProjectPanel(object):
+	panel_name = 'ItdchelperCreateCmsProject'
 	window = None
 	header = 'Create ITDC CMS Project:'+"\n"
 
 
 	def __init__(self, pwindow):
-		panel_name = 'ItdchelperCreateCmsProject'
 		self.window = pwindow
 		if not hasattr(self, 'output_view'):
-			self.output_view = self.window.get_output_panel(panel_name)
+			self.output_view = self.window.get_output_panel(self.panel_name)
 
-		self.window.run_command('show_panel', {'panel': 'output.'+panel_name})
-		self.add(self.header)
+		self.output_view.run_command('set_setting', {"setting": 'word_wrap', "value": True})
+		self.output_view.run_command('set_setting', {"setting": 'wrap_width', "value": 80})
+
+		self.show()
+		self.addHeader()
+
+
+	def show(self):
+		self.window.run_command('show_panel', {'panel': 'output.'+self.panel_name})
+
 
 	def add(self, text):
+		self.show()
 		self.output_view.run_command('append', {'characters': text})
 
-	def append(self, text):
-		self.output_view.run_command('append', {'characters': "\n"+text})
+	def addHeader(self):
+		self.add(self.header)
+
+
+
+
+	def append(self, text, new_line=True):
+		self.show()
+		if (new_line):
+			self.output_view.run_command('append', {'characters': "\n"+text})
+		else:
+			self.output_view.run_command('append', {'characters': text})
+
+		self.output_view.run_command('move', {"by": "lines", "forward": True})
+
+
+
 
 	def replace(self, text):
+		self.show()
 		self.erase()
-		self.add(self.header)
+		self.addHeader()
 		self.add("\n"+text)
 
 
 	def erase(self):
+		self.show()
 		self.output_view.run_command('erase')
 
 
