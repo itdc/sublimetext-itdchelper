@@ -4,7 +4,7 @@
 		"command": "itdchelper_create_cms_project"
 	},
 	{
-		"caption": "ITDCHelper: Test",
-		"command": "itdchelper_create_project"
+		"caption": "ITDCHelper: Delete CMS Project",
+		"command": "itdchelper_delete_cms_project"
 	}
 ]

@@ -1,0 +1,6 @@
+Sublime ITDCHelper 1.2.0 Changelog:
+
+
+Features
+------------
+- Added feature for create/delete ITDC CMS Project
