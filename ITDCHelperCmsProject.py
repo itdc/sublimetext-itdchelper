@@ -20,7 +20,6 @@ import time
 
 import requests
 
-settings = sublime.load_settings('ITDCHelper.sublime-settings')
 
 def show_error(text):
     sublime.error_message(u'ITDCHelper\n\n%s' % text)
@@ -136,7 +135,7 @@ class ItdchelperCreateCmsProjectCommand(sublime_plugin.TextCommand):
 		self.view.window().show_input_panel('Project Name to Create:', '', lambda s: self.on_done(s), None, None)
 
 	def on_done(self, text):
-		thread = ItdchelperCreateCmsProjectProcess(text, self.view, settings)
+		thread = ItdchelperCreateCmsProjectProcess(text, self.view)
 		thread.start()
 		return
 
@@ -155,8 +154,8 @@ class ItdchelperCreateCmsProjectProcess(threading.Thread):
 	start_time = None
 
 
-	def __init__(self, text, pview, psettings):
-		self.settings = psettings
+	def __init__(self, text, pview):
+		self.settings = sublime.load_settings('ITDCHelper.sublime-settings')
 		self.start_time = time.time()
 		self.domain = text
 		self.view = pview
@@ -295,7 +294,7 @@ class ItdchelperDeleteCmsProjectCommand(sublime_plugin.TextCommand):
 		if (choice == 1 or choice == -1):
 			return
 
-		thread = ItdchelperDeleteCmsProjectProcess(self.project, self.view, settings)
+		thread = ItdchelperDeleteCmsProjectProcess(self.project, self.view)
 		thread.start()
 
 	def is_enabled(self):
@@ -312,8 +311,8 @@ class ItdchelperDeleteCmsProjectProcess(threading.Thread):
 	window = None
 	start_time = None
 
-	def __init__(self, text, pview, psettings):
-		self.settings = psettings
+	def __init__(self, text, pview):
+		self.settings = sublime.load_settings('ITDCHelper.sublime-settings')
 		self.start_time = time.time()
 		self.domain = text
 		self.view = pview
