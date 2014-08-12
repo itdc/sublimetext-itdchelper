@@ -126,9 +126,6 @@ class ITDCRequest(object):
 		return self.json
 
 
-
-
-
 ### Create CMS Project
 class ItdchelperCreateCmsProjectCommand(sublime_plugin.TextCommand):
 	def run(self, edit):
@@ -161,7 +158,7 @@ class ItdchelperCreateCmsProjectProcess(threading.Thread):
 		self.view = pview
 		self.window = self.view.window()
 
-		api_key = settings.get('api_key')
+		api_key = self.settings.get('api_key')
 		if ((api_key is None) or (len(api_key) != 40)):
 			show_error("API KEY not found")
 			return
@@ -318,7 +315,7 @@ class ItdchelperDeleteCmsProjectProcess(threading.Thread):
 		self.view = pview
 		self.window = self.view.window()
 
-		api_key = settings.get('api_key')
+		api_key = self.settings.get('api_key')
 		if ((api_key is None) or (len(api_key) != 40)):
 			show_error("API KEY not found")
 			return
