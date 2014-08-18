@@ -333,7 +333,7 @@ class ItdchelperDeleteCmsProjectProcess(threading.Thread):
 		self.panel.append('Deleting project "'+self.domain+'"')
 		self.panel.append('Loading')
 
-		thread2 = ItdchelperCreateCmsProjectLoading(self.panel)
+		thread2 = ItdchelperDeleteCmsProjectLoading(self.panel)
 		thread2.start()
 
 
@@ -385,6 +385,105 @@ class ItdchelperDeleteCmsProjectProcess(threading.Thread):
 		self.panel.finish()
 
 class ItdchelperDeleteCmsProjectLoading(threading.Thread):
+	panel = None
+	running = False
+
+	def __init__(self, ppanel):
+		self.panel = ppanel
+		self.running = True
+		threading.Thread.__init__(self)
+
+	def run(self):
+
+		for i in range(1000000):
+			time.sleep(0.3)
+			if not self.running:
+				break
+			self.panel.append(".", False)
+
+	def stop(self):
+		self.running = False
+
+
+
+### Backup CMS Project
+class ItdchelperBackupCmsProjectCommand(sublime_plugin.TextCommand):
+
+	def run(self, edit):
+		self.view.window().show_input_panel('Project Name to Backup:', '', lambda s: self.on_done(s), None, None)
+
+	def on_done(self, text):
+		thread = ItdchelperBackupCmsProjectProcess(text, self.view)
+		thread.start()
+		return
+
+	def is_enabled(self):
+		ret = True
+		return ret
+
+
+class ItdchelperBackupCmsProjectProcess(threading.Thread):
+	settings = None
+	localservice_url = ''
+	domain = ''
+	view = None
+	window = None
+	start_time = None
+
+	def __init__(self, text, pview):
+		self.settings = sublime.load_settings('ITDCHelper.sublime-settings')
+		self.start_time = time.time()
+		self.domain = text
+		self.view = pview
+		self.window = self.view.window()
+
+
+
+		self.localservice_url = 'http://tools.local.itdc.ge/project/process.php'
+
+		threading.Thread.__init__(self)
+
+
+	def run(self):
+		if not hasattr(self, 'panel'):
+			self.panel = ItdchelperProjectPanel(self.window, 'ItdchelperBackupCmsProject', 'Backup ITDC CMS Project:'+"\n")
+
+		self.panel.append('Backuping project "'+self.domain+'"')
+		self.panel.append('Loading')
+
+		thread2 = ItdchelperBackupCmsProjectLoading(self.panel)
+		thread2.start()
+
+
+		service_url = self.localservice_url + '?mode=backup&name='+self.domain
+
+		#self.panel.append('DEBUG: request to '+service_url)
+
+		request = ITDCRequest(service_url)
+		if (request.isError()):
+			thread2.stop()
+			stderr = "Error: "+request.getError()
+			elapsed = "\n= = = = = = = = = = = = = = =\nExecution time: %.3f sec" % round((time.time() - self.start_time), 3)
+			txt = stderr + elapsed
+			self.panel.replace(txt)
+			self.panel.finish()
+			return False
+		json_data = request.getJSON()
+
+		#self.panel.append(' Success', False)
+
+		thread2.stop()
+
+		elapsed = "\n= = = = = = = = = = = = = = =\nExecution time: %.3f sec" % round((time.time() - self.start_time), 3)
+		status = json_data['status']
+		msg = json_data['msg'] + elapsed
+		if (status == "ERROR"):
+			msg = "Error: "+msg
+
+		self.panel.replace(msg)
+		self.panel.finish()
+
+class ItdchelperBackupCmsProjectLoading(threading.Thread):
 	panel = None
 	running = False
 
