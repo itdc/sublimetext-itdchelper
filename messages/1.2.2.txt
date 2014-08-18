@@ -1,4 +1,4 @@
-Sublime ITDCHelper 1.2.1 Changelog:
+Sublime ITDCHelper 1.2.2 Changelog:
 
 
 Fixes
