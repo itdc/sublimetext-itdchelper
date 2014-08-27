@@ -6,5 +6,9 @@
 	{
 		"caption": "ITDCHelper: Delete CMS Project",
 		"command": "itdchelper_delete_cms_project"
+	},
+	{
+		"caption": "ITDCHelper: Backup CMS Project",
+		"command": "itdchelper_backup_cms_project"
 	}
 ]
