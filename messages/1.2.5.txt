@@ -1,0 +1,6 @@
+Sublime ITDCHelper 1.2.5 Changelog:
+
+
+Features
+------------
+- Added feature for manage ITDC Empty Projects

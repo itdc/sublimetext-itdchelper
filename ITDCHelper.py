@@ -6,26 +6,51 @@
 import sublime
 import sublime_plugin
 import re
-
+import sys
+import imp
 
 st_version = 2
 if sublime.version() == '' or int(sublime.version()) > 3000:
 	st_version = 3
 
+from ITDCHelper.itdchelper.functions import *
+from ITDCHelper.itdchelper.panel import ItdchelperProjectPanel
+from ITDCHelper.itdchelper.request import ITDCRequest
+from ITDCHelper.itdchelper.loading import ItdchelperLoading
+from ITDCHelper.itdchelper.commands import EraseCommand
+
+
 # fix for ST2
 cprint = globals()["__builtins__"]["print"]
 
+reload_mods = []
+for mod in sys.modules:
+	#print('MOD: '+mod)
+	if (mod[0:21] == 'ITDCHelper.itdchelper' or mod[0:15] == 'itdchelper.libs' or mod == 'itdchelper') and sys.modules[mod] != None:
+		reload_mods.append(mod)
 
+mods_load_order = [
+	'ITDCHelper.itdchelper',
+	'.functions',
+	'.commands',
+	'.panel',
+	'.request',
+	'.loading',
+]
 
+mod_load_prefix = '.itdchelper'
+if st_version == 3:
+	mod_load_prefix = 'ITDCHelper.itdchelper'
+	from imp import reload
 
-
-
-
+for mod in mods_load_order:
+	if mod_load_prefix + mod in reload_mods:
+		reload(sys.modules[mod_load_prefix + mod])
 
 
 def plugin_loaded():
 	cprint('ITDCHelper: Plugin Initialized')
-	print(sublime.active_window().project_data())
+	#print(sublime.active_window().project_data())
 
 if st_version == 2:
 	plugin_loaded()
@@ -100,7 +125,7 @@ class ITDCCompletions(sublime_plugin.EventListener):
 		for pp in proposals:
 			final_comp.append((pp, pp))
 
-		cprint(final_comp)
+		#cprint(final_comp)
 
 		#final_comp.extend(proposals)
 

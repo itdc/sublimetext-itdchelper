@@ -10,5 +10,20 @@
 	{
 		"caption": "ITDCHelper: Backup CMS Project",
 		"command": "itdchelper_backup_cms_project"
+	},
+	{
+		"caption": "ITDCHelper: Create Empty Project",
+		"command": "itdchelper_create_empty_project"
+	},
+	{
+		"caption": "ITDCHelper: Delete Empty Project",
+		"command": "itdchelper_delete_empty_project"
+	},
+	{
+		"caption": "ITDCHelper: Backup Empty Project",
+		"command": "itdchelper_backup_empty_project"
 	}
+
+
+
 ]
