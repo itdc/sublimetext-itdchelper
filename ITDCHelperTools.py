@@ -128,7 +128,7 @@ class ItdchelperToolsChmodProcess(threading.Thread):
 
 
 		service_url = self.localservice_url + '?mode=chmod&chmod='+self.chmod+'&recursively='+str(self.recursively)+'&path='+self.path
-		print(service_url)
+		#print(service_url)
 		#self.panel.append('DEBUG: request to '+service_url)
 
 		request = ITDCRequest(service_url)
