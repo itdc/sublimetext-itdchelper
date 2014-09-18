@@ -2,9 +2,12 @@
 # @copyright 		Copyright (c) 2008-2014, Avtandil Kikabidze (akalongman@gmail.com)
 # @link 			http://long.ge
 # @license 		GNU General Public License version 2 or later;
+import sublime, sublime_plugin, os, re, sys
 
-import sublime, sublime_plugin
-import urllib.request
+libs_path = os.path.dirname(os.path.realpath(__file__))
+if libs_path not in sys.path:
+	sys.path.append(libs_path)
+
 import json
 import requests
 

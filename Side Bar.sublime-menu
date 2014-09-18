@@ -1,0 +1,11 @@
+[
+	{ "caption": "-" },
+	{
+		"caption": "ITDCHelper",
+		"children":
+		[
+			{ "caption": "Chmod", "command": "itdchelper_tools_chmod", "args": {"paths": [], "recursively": false} },
+			{ "caption": "Chmod Recursively", "command": "itdchelper_tools_chmod", "args": {"paths": [], "recursively": true} }
+		]
+	}
+]

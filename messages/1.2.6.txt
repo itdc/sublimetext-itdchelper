@@ -1,0 +1,6 @@
+Sublime ITDCHelper 1.2.6 Changelog:
+
+
+Features
+------------
+- Added feature for chmodding in local server

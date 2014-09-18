@@ -3,7 +3,13 @@
 # @link 			http://long.ge
 # @license 		GNU General Public License version 2 or later;
 
-import sublime, sublime_plugin
+import sublime, sublime_plugin, os, re, sys
+
+directory = os.path.dirname(os.path.realpath(__file__))
+libs_path = os.path.join(directory, "itdchelper")
+
+if libs_path not in sys.path:
+	sys.path.append(libs_path)
 
 
 
