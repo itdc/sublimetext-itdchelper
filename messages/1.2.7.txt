@@ -1,0 +1,6 @@
+Sublime ITDCHelper 1.2.7 Changelog:
+
+
+Fixes
+------------
+- Minor bug-fixes and performance improvements

@@ -117,7 +117,7 @@ class ItdchelperToolsChmodProcess(threading.Thread):
 
 	def run(self):
 		if not hasattr(self, 'panel'):
-			self.panel = ItdchelperProjectPanel(self.window, 'ItdchelperCreateCmsProject', 'Chmod Path: "'+self.path+'"'+"\n")
+			self.panel = ItdchelperProjectPanel(self.window, 'ItdchelperToolsChmod', 'Chmod Path: "'+self.path+'"'+"\n")
 
 
 		self.panel.append('Chmodding path "'+self.path+'"')
@@ -128,6 +128,100 @@ class ItdchelperToolsChmodProcess(threading.Thread):
 
 
 		service_url = self.localservice_url + '?mode=chmod&chmod='+self.chmod+'&recursively='+str(self.recursively)+'&path='+self.path
+		#print(service_url)
+		#self.panel.append('DEBUG: request to '+service_url)
+
+		request = ITDCRequest(service_url)
+		if (request.isError()):
+			thread2.stop()
+			stderr = "Error: "+request.getError()
+			elapsed = "\n= = = = = = = = = = = = = = =\nExecution time: %.3f sec" % round((time.time() - self.start_time), 3)
+			txt = stderr + elapsed
+			self.panel.replace(txt)
+			self.panel.finish()
+			return False
+		json_data = request.getJSON()
+
+
+		#self.panel.append(' Success', False)
+
+		thread2.stop()
+
+		elapsed = "\n= = = = = = = = = = = = = = =\nExecution time: %.3f sec" % round((time.time() - self.start_time), 3)
+		status = json_data['status']
+		msg = json_data['msg'] + elapsed
+		if (status == "ERROR"):
+			msg = "Error: "+msg
+
+		self.panel.replace(msg)
+		self.panel.finish()
+
+
+	def isRunning(self):
+		return self.running
+
+
+
+### CMD
+class ItdchelperToolsCmdCommand(sublime_plugin.TextCommand):
+
+	def run(self, edit):
+		self.view.window().show_input_panel('CMD:', '', lambda s: self.on_done(s), None, None)
+		return
+
+
+	def on_done(self, cmd):
+		if (len(cmd) < 1):
+			show_error('Command is empty!')
+			return
+		thread = ItdchelperToolsCmdProcess(cmd, self.view)
+		thread.start()
+		return
+
+
+	def is_enabled(self):
+		settings = sublime.load_settings('ITDCHelper.sublime-settings')
+		cmd_enabled = settings.get('cmd_enabled', 0)
+		if (cmd_enabled):
+			return True
+		return False
+
+
+class ItdchelperToolsCmdProcess(threading.Thread):
+	settings = None
+	localservice_url = ''
+	path = ''
+	recursively = False
+	chmod = False
+	view = None
+	window = None
+	start_time = None
+
+
+	def __init__(self, cmd, pview):
+		self.settings = sublime.load_settings('ITDCHelper.sublime-settings')
+		self.start_time = time.time()
+		self.cmd = cmd
+		self.view = pview
+		self.window = self.view.window()
+		self.localservice_url = 'http://tools.local.itdc.ge/project/cmd.php'
+		threading.Thread.__init__(self)
+
+
+
+	def run(self):
+		if not hasattr(self, 'panel'):
+			self.panel = ItdchelperProjectPanel(self.window, 'ItdchelperToolsCmd', 'Command: "'+self.cmd+'"'+"\n")
+
+
+		self.panel.append('Executing command')
+		self.panel.append('Loading')
+
+		thread2 = ItdchelperLoading(self.panel)
+		thread2.start()
+
+
+		service_url = self.localservice_url + '?cmd='+self.cmd
 		#print(service_url)
 		#self.panel.append('DEBUG: request to '+service_url)
 

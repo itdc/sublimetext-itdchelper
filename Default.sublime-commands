@@ -22,6 +22,10 @@
 	{
 		"caption": "ITDCHelper: Backup Empty Project",
 		"command": "itdchelper_backup_empty_project"
+	},
+	{
+		"caption": "ITDCHelper: Run Command",
+		"command": "itdchelper_tools_cmd"
 	}
 
 
