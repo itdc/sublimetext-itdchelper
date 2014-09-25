@@ -15,6 +15,8 @@ import threading
 from random import sample
 import time
 
+from urllib.parse import quote
+
 from functions import *
 from panel import ItdchelperProjectPanel
 from request import ITDCRequest
@@ -220,8 +222,9 @@ class ItdchelperToolsCmdProcess(threading.Thread):
 		thread2 = ItdchelperLoading(self.panel)
 		thread2.start()
 
+		cmd = quote(self.cmd)
 
-		service_url = self.localservice_url + '?cmd='+self.cmd
+		service_url = self.localservice_url + '?cmd='+cmd
 		#print(service_url)
 		#self.panel.append('DEBUG: request to '+service_url)
 

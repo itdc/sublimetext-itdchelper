@@ -1,0 +1,12 @@
+Sublime ITDCHelper 1.2.8 Changelog:
+
+
+Features
+------------
+- Added keybinding ctrl+shift+i for filled command palette
+- Added submenus in Preferences - Package Settings - ITDCHelper
+
+
+Fixes
+------------
+- Minor bug-fixes and performance improvements
