@@ -4,12 +4,16 @@ import threading, subprocess, http.server, socketserver
 directory = os.path.dirname(os.path.realpath(__file__))
 libs_path = os.path.join(directory, "itdchelper")
 
+sublime_text_file = os.path.dirname(sublime.__file__) + r'\sublime_text.exe'
+
 if libs_path not in sys.path:
 	sys.path.append(libs_path)
 
 class ItdchelperOpenFileCommand(sublime_plugin.WindowCommand):
 	def run(self,path):
 		self.window.open_file(path,1)
+		# execute sublime text executable so sublime text window gets focused/active
+		subprocess.Popen("\""+ sublime_text_file +"\"")
 
 class Handler(http.server.BaseHTTPRequestHandler):
 	def do_GET(s):
