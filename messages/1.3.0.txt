@@ -1,0 +1,6 @@
+Sublime ITDCHelper 1.3.0 Changelog:
+
+
+Features
+------------
+- Added local server for ITDC debug system
