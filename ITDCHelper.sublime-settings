@@ -3,5 +3,14 @@
 	// plugin is updated. Instead transfer what you need to the 'Preferences - Package Settings - ITDCHelper - Settings User' file.
 
 	// API KEY for project service
-	"api_key": ""
+	"api_key": "",
+
+	"server_addr": "",
+
+	"server_user": "",
+
+	"server_pass": "",
+
+	// if empty - plink will be used from Path environment
+	"plink_path": ""
 }

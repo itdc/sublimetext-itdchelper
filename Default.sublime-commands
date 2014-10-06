@@ -26,6 +26,10 @@
 	{
 		"caption": "ITDCHelper: Run Command",
 		"command": "itdchelper_tools_cmd"
+	},
+	{
+		"caption": "ITDCHelper: Run PHPUnit",
+		"command": "itdchelper_php_unit"
 	}
 
 

@@ -17,6 +17,8 @@ class ItdchelperProjectPanel(object):
 	panel_name = ''
 	window = None
 	header = ''
+	theme = 'Packages/ITDCHelper/itdchelper/ITDCHelper.hidden-tmTheme'
+	syntax = 'Packages/ITDCHelper/itdchelper/ITDCHelper.hidden-tmLanguage'
 
 	def __init__(self, pwindow, pname, pheader):
 		self.panel_name = pname
@@ -28,6 +30,13 @@ class ItdchelperProjectPanel(object):
 		self.output_view.set_read_only(False)
 		self.output_view.run_command('set_setting', {"setting": 'word_wrap', "value": True})
 		self.output_view.run_command('set_setting', {"setting": 'wrap_width', "value": 80})
+		self.output_view.run_command('set_setting', {"setting": 'font_size', "value": 11})
+		self.output_view.run_command('set_setting', {"setting": 'line_numbers', "value": False})
+
+
+
+		self.output_view.settings().set("color_scheme", self.theme)
+		self.output_view.set_syntax_file(self.syntax)
 
 		self.show()
 		self.addHeader()
