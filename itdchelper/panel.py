@@ -32,6 +32,7 @@ class ItdchelperProjectPanel(object):
 		self.output_view.run_command('set_setting', {"setting": 'wrap_width', "value": 80})
 		self.output_view.run_command('set_setting', {"setting": 'font_size', "value": 11})
 		self.output_view.run_command('set_setting', {"setting": 'line_numbers', "value": False})
+		self.output_view.run_command('set_setting', {"setting": 'margin', "value": -20})
 
 
 

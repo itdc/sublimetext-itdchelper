@@ -44,7 +44,7 @@ class ItdchelperPhpUnitProcess(threading.Thread):
 	server_user = None
 	server_pass = None
 	plink_path = None
-	pu_folder = 'avtocms'
+	pu_folder = 'cmsv3'
 
 
 	def __init__(self, pview):
@@ -52,6 +52,31 @@ class ItdchelperPhpUnitProcess(threading.Thread):
 		self.start_time = time.time()
 		self.view = pview
 		self.window = self.view.window()
+
+		project_data = self.window.project_data()
+		if (project_data is None):
+			show_error("Project Data not found!")
+			return
+
+
+		project_folder = project_data['folders'][0]['path']
+		if (project_folder is None):
+			show_error("Project folder not found!")
+			return
+
+
+		if not os.path.isfile("%s" % os.path.join(project_folder, 'phpunit.xml')) and not os.path.isfile("%s" % os.path.join(project_folder, 'phpunit.xml.dist')):
+			show_error("phpunit.xml or phpunit.xml.dist not found!")
+			return
+
+
+		path = project_folder.replace('\\', '/')
+		pu_folder = path.rsplit("/",1)[1]
+		if (pu_folder is None):
+			show_error("Project folder not found!")
+			return
+		self.pu_folder = pu_folder
+
 
 		self.server_addr = self.settings.get('server_addr')
 		if ((self.server_addr is None) or (len(self.server_addr) == 0)):
@@ -76,7 +101,7 @@ class ItdchelperPhpUnitProcess(threading.Thread):
 
 	def run(self):
 		if not hasattr(self, 'panel'):
-			self.panel = ItdchelperProjectPanel(self.window, 'ItdchelperPHPUnit', 'PHPUnit:'+"\n")
+			self.panel = ItdchelperProjectPanel(self.window, 'ItdchelperPHPUnit', 'PHPUnit Tests: '+self.pu_folder+"\n")
 
 
 		self.panel.append('PHPUnit is running')

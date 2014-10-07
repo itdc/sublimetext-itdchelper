@@ -6,6 +6,7 @@
 	<string>ITDCHelperTheme</string>
 	<key>settings</key>
 	<array>
+
 		<dict>
 			<key>settings</key>
 			<dict>
@@ -23,72 +24,79 @@
 				<string>#0080C0FF</string>
 			</dict>
 		</dict>
-	    <dict>
-	      <key>name</key>
-	      <string>Test</string>
-	      <key>scope</key>
-	      <string>test.pass</string>
-	      <key>settings</key>
-	      <dict>
-	        <key>foreground</key>
-	        <string>#A6E22E</string>
-	      </dict>
-	    </dict>
-	    <dict>
-	      <key>name</key>
-	      <string>Test</string>
-	      <key>scope</key>
-	      <string>test.fail</string>
-	      <key>settings</key>
-	      <dict>
-	        <key>foreground</key>
-	        <string>#F00000</string>
-	      </dict>
-	    </dict>
-	    <dict>
-	      <key>name</key>
-	      <string>Test</string>
-	      <key>scope</key>
-	      <string>test.error</string>
-	      <key>settings</key>
-	      <dict>
-	        <key>foreground</key>
-	        <string>#F00000</string>
-	      </dict>
-	    </dict>
-	    <dict>
-	      <key>name</key>
-	      <string>Test</string>
-	      <key>scope</key>
-	      <string>test.skipped</string>
-	      <key>settings</key>
-	      <dict>
-	        <key>foreground</key>
-	        <string>#66D9EF</string>
-	      </dict>
-	    </dict>
-	    <dict>
-	      <key>name</key>
-	      <string>Test</string>
-	      <key>scope</key>
-	      <string>test.incomplete</string>
-	      <key>settings</key>
-	      <dict>
-	        <key>foreground</key>
-	        <string>#FFcc66</string>
-	      </dict>
-	    </dict>
-	    <dict>
-	      <key>name</key>
-	      <string>Test</string>
-	      <key>scope</key>
-	      <string>test.highlight</string>
-	      <key>settings</key>
-	      <dict>
-	        <key>foreground</key>
-	        <string>#E6DB74</string>
-	      </dict>
-	    </dict>
+
+		<dict>
+			<key>name</key>
+			<string>Test</string>
+			<key>scope</key>
+			<string>test.pass</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#00FF00</string>
+			</dict>
+		</dict>
+
+		<dict>
+			<key>name</key>
+			<string>Test</string>
+			<key>scope</key>
+			<string>test.fail</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#F00000</string>
+			</dict>
+		</dict>
+
+		<dict>
+			<key>name</key>
+			<string>Test</string>
+			<key>scope</key>
+			<string>test.error</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#F00000</string>
+			</dict>
+		</dict>
+
+		<dict>
+			<key>name</key>
+			<string>Test</string>
+			<key>scope</key>
+			<string>test.skipped</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#66D9EF</string>
+			</dict>
+		</dict>
+
+		<dict>
+			<key>name</key>
+			<string>Test</string>
+			<key>scope</key>
+			<string>test.incomplete</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#FFcc66</string>
+			</dict>
+		</dict>
+
+		<dict>
+			<key>name</key>
+			<string>Test</string>
+			<key>scope</key>
+			<string>test.highlight</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#E6DB74</string>
+			</dict>
+		</dict>
+
 		<dict>
 			<key>name</key>
 			<string>Test</string>
@@ -100,6 +108,7 @@
 				<string>#75715E</string>
 			</dict>
 		</dict>
+
 	</array>
 	<key>uuid</key>
 	<string>72174d10-bb12-11e0-962b-112233445577</string>
