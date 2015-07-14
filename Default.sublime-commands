@@ -1,36 +1,36 @@
 [
-	{
-		"caption": "ITDCHelper: Create CMS Project",
-		"command": "itdchelper_create_cms_project"
-	},
-	{
-		"caption": "ITDCHelper: Delete CMS Project",
-		"command": "itdchelper_delete_cms_project"
-	},
-	{
-		"caption": "ITDCHelper: Backup CMS Project",
-		"command": "itdchelper_backup_cms_project"
-	},
-	{
-		"caption": "ITDCHelper: Create Empty Project",
-		"command": "itdchelper_create_empty_project"
-	},
-	{
-		"caption": "ITDCHelper: Delete Empty Project",
-		"command": "itdchelper_delete_empty_project"
-	},
-	{
-		"caption": "ITDCHelper: Backup Empty Project",
-		"command": "itdchelper_backup_empty_project"
-	},
-	{
-		"caption": "ITDCHelper: Run Command",
-		"command": "itdchelper_tools_cmd"
-	},
-	{
-		"caption": "ITDCHelper: Run PHPUnit",
-		"command": "itdchelper_php_unit"
-	}
+    {
+        "caption": "ITDCHelper: Create CMS Project",
+        "command": "itdchelper_create_cms_project"
+    },
+    {
+        "caption": "ITDCHelper: Delete CMS Project",
+        "command": "itdchelper_delete_cms_project"
+    },
+    {
+        "caption": "ITDCHelper: Backup CMS Project",
+        "command": "itdchelper_backup_cms_project"
+    },
+    {
+        "caption": "ITDCHelper: Create Empty Project",
+        "command": "itdchelper_create_empty_project"
+    },
+    {
+        "caption": "ITDCHelper: Delete Empty Project",
+        "command": "itdchelper_delete_empty_project"
+    },
+    {
+        "caption": "ITDCHelper: Backup Empty Project",
+        "command": "itdchelper_backup_empty_project"
+    },
+    {
+        "caption": "ITDCHelper: Run Command",
+        "command": "itdchelper_tools_cmd"
+    },
+    {
+        "caption": "ITDCHelper: Run PHPUnit",
+        "command": "itdchelper_php_unit"
+    }
 
 
 ]

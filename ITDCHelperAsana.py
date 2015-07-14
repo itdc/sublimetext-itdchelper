@@ -1,3 +1,9 @@
+# @package    ITDCHelper
+# @author       Avtandil Kikabidze aka LONGMAN
+# @copyright   Copyright (c) 2008-2015, Avtandil Kikabidze (akalongman@gmail.com)
+# @link            http://long.ge
+# @license       http://opensource.org/licenses/mit-license.php  The MIT License (MIT)
+
 import os
 import sys
 
@@ -13,7 +19,7 @@ directory = os.path.dirname(os.path.realpath(__file__))
 libs_path = os.path.join(directory, "itdchelper")
 
 if libs_path not in sys.path:
-	sys.path.append(libs_path)
+    sys.path.append(libs_path)
 
 
 
